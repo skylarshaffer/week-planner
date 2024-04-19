@@ -25,3 +25,31 @@ dialog {
 dialog::backdrop {
   background-color: rgb(0, 0, 0, 0.8);
 }
+
+tbody[data-selected="Monday"] tr[data-day="Monday"] {
+  display: table-row !important;
+}
+
+tbody[data-selected="Tuesday"] tr[data-day="Tuesday"] {
+  display: table-row !important;
+}
+
+tbody[data-selected="Wednesday"] tr[data-day="Wednesday"] {
+  display: table-row !important;
+}
+
+tbody[data-selected="Thursday"] tr[data-day="Thursday"] {
+  display: table-row !important;
+}
+
+tbody[data-selected="Friday"] tr[data-day="Friday"] {
+  display: table-row !important;
+}
+
+tbody[data-selected="Saturday"] tr[data-day="Saturday"] {
+  display: table-row !important;
+}
+
+tbody[data-selected="Sunday"] tr[data-day="Sunday"] {
+  display: table-row !important;
+}

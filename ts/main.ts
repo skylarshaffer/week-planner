@@ -70,9 +70,10 @@ $formInputs.addEventListener('submit', (event: Event) => {
 
 function renderEntry(entry: Entry): HTMLTableRowElement {
   const $tr = document.createElement('tr');
+  $tr.classList.add('hidden');
   $tr.classList.add('entry');
   $tr.dataset.entryId = data.nextEntryId.toString();
-  $tr.dataset.day = 'Monday';
+  $tr.dataset.day = entry.day;
 
   const $tdTime = document.createElement('td') as HTMLTableCellElement;
   const $tdInformation = document.createElement('td') as HTMLTableCellElement;
