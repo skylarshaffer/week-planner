@@ -8,7 +8,7 @@ interface Entry {
   time: string;
   day: string;
   information: string;
-  entryId: number;
+  entryId:number;
 }
 
 const $addNewEventButton = document.querySelector(
@@ -59,26 +59,28 @@ $formInputs.addEventListener('submit', (event: Event) => {
     time: $formElements.time.value,
     day: $formElements.day.value,
     information: $formElements.information.value,
-    entryId: data.nextEntryId,
+    entryId: data.nextEntryId
   };
-  $tbody.prepend(renderEntry(formSubmission));
+ $tbody.prepend(renderEntry(formSubmission));
 
   data.entries.unshift(formSubmission);
+
 
   $dialog.close();
 });
 
-function renderEntry(entry: Entry): HTMLTableRowElement {
+function renderEntry(entry:Entry):HTMLTableRowElement{
   const $tr = document.createElement('tr');
-  $tr.classList.add('entry');
-  $tr.dataset.entryId = data.nextEntryId.toString();
-  $tr.dataset.day = 'Monday';
+$tr.classList.add('entry')
+$tr.dataset.entryId = data.nextEntryId.toString()
+$tr.dataset.day = 'Monday';
 
   const $tdTime = document.createElement('td') as HTMLTableCellElement;
   const $tdInformation = document.createElement('td') as HTMLTableCellElement;
   const $tdActions = document.createElement('td') as HTMLTableCellElement;
   const $editButton = document.createElement('button') as HTMLButtonElement;
   const $deleteButton = document.createElement('button') as HTMLButtonElement;
+
 
   // FOR SUBMIT LISTENER-------
   // for(let i = 0; i < data.entries.length; i++){
@@ -90,8 +92,8 @@ function renderEntry(entry: Entry): HTMLTableRowElement {
   $tdTime.innerHTML = entry.time;
   $tdInformation.innerHTML = entry.information;
 
-  $editButton.textContent = 'Edit';
-  $deleteButton.textContent = 'Delete';
+  $editButton.textContent = 'Edit'
+  $deleteButton.textContent = 'Delete'
 
   $editButton.classList.add('edit-button');
   $deleteButton.classList.add('delete-button');
@@ -102,5 +104,10 @@ function renderEntry(entry: Entry): HTMLTableRowElement {
   $tdActions.appendChild($deleteButton);
   $tr.appendChild($tdActions);
 
-  return $tr;
+  return $tr
+
 }
+
+$select.addEventListener('change', (event: Event) => {
+
+})
