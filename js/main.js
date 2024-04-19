@@ -68,3 +68,8 @@ function renderEntry(entry) {
   $tr.appendChild($tdActions);
   return $tr;
 }
+$select.addEventListener('change', (event) => {
+  const eventTarget = event.target;
+  data.view = eventTarget.value;
+  $select.dataset.selected = eventTarget.value;
+});
