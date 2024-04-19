@@ -4,18 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Week Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet" />
+    <link rel="icon" href="images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
     <header>
       <div class="container">
         <div class="row">
           <div class="column-full navbar">
             <h1>Weekly Planner</h1>
-            <div class="row">
-              <a>Choose Day to Show Events</a>
+          </div>
+          <div class="column-full">
+            <div class="calendar-item">
+              <h2>Choose Day to Show Events</h2>
             </div>
           </div>
         </div>
@@ -24,85 +39,95 @@
     <main class="container">
       <div class="row">
         <div class="column-full">
-          <select name="days" id="day-select">
-            <option value="" disabled selected>Choose a day</option>
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-          </select>
+          <div class="calendar-item">
+            <select name="days" id="day-select">
+              <option value="" disabled selected>Choose a day</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+          </div>
         </div>
         <div class="column-full">
-          <button type="button" id="add-new-event-button">Add New Event</button>
+          <div class="calendar-item">
+            <button type="button" id="add-new-event-button">
+              Add New Event
+            </button>
+          </div>
         </div>
         <div class="column-full">
-          <table>
-            <thead>
-              <tr>
-                <th>Time</th>
-                <th>Event</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="time-td"></td>
-                <td class="day-td"></td>
-                <td class="information-td"></td>
-              </tr>
-              <tr>
-                <td class="time-td"></td>
-                <td class="day-td"></td>
-                <td class="information-td"></td>
-              </tr>
-              <tr>
-                <td class="time-td"></td>
-                <td class="day-td"></td>
-                <td class="information-td"></td>
-              </tr>
-              <tr>
-                <td class="time-td"></td>
-                <td class="day-td"></td>
-                <td class="information-td"></td>
-              </tr>
-              <tr>
-                <td class="time-td"></td>
-                <td class="day-td"></td>
-                <td class="information-td"></td>
-              </tr>
-              <tr>
-                <td class="time-td"></td>
-                <td class="day-td"></td>
-                <td class="information-td"></td>
-              </tr>
-              <tr>
-                <td class="time-td"></td>
-                <td class="day-td"></td>
-                <td class="information-td"></td>
-              </tr>
-              <tr>
-                <td class="time-td"></td>
-                <td class="day-td"></td>
-                <td class="information-td"></td>
-              </tr>
-              <tr>
-                <td class="time-td"></td>
-                <td class="day-td"></td>
-                <td class="information-td"></td>
-              </tr>
-              <tr>
-                <td class="time-td"></td>
-                <td class="day-td"></td>
-                <td class="information-td"></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="calendar-item">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Event</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="time-td"></td>
+                  <td class="day-td"></td>
+                  <td class="information-td"></td>
+                </tr>
+                <tr>
+                  <td class="time-td"></td>
+                  <td class="day-td"></td>
+                  <td class="information-td"></td>
+                </tr>
+                <tr>
+                  <td class="time-td"></td>
+                  <td class="day-td"></td>
+                  <td class="information-td"></td>
+                </tr>
+                <tr>
+                  <td class="time-td"></td>
+                  <td class="day-td"></td>
+                  <td class="information-td"></td>
+                </tr>
+                <tr>
+                  <td class="time-td"></td>
+                  <td class="day-td"></td>
+                  <td class="information-td"></td>
+                </tr>
+                <tr>
+                  <td class="time-td"></td>
+                  <td class="day-td"></td>
+                  <td class="information-td"></td>
+                </tr>
+                <tr>
+                  <td class="time-td"></td>
+                  <td class="day-td"></td>
+                  <td class="information-td"></td>
+                </tr>
+                <tr>
+                  <td class="time-td"></td>
+                  <td class="day-td"></td>
+                  <td class="information-td"></td>
+                </tr>
+                <tr>
+                  <td class="time-td"></td>
+                  <td class="day-td"></td>
+                  <td class="information-td"></td>
+                </tr>
+                <tr>
+                  <td class="time-td"></td>
+                  <td class="day-td"></td>
+                  <td class="information-td"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div class="column-full">
-          <p>2024 Weekly Planner Inc</p>
+          <div class="calendar-item">
+            <p>2024 Weekly Planner Inc</p>
+          </div>
         </div>
       </div>
     </main>
@@ -110,37 +135,45 @@
       <form>
         <div class="row">
           <div class="column-full">
-            <label for="modal-time-of-event">Time of Event</label>
-            <select name="time-of-event" id="time">
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="Wednesday">Wednesday</option>
-              <option value="Thursday">Thursday</option>
-              <option value="Friday">Friday</option>
-              <option value="Saturday">Saturday</option>
-              <option value="Sunday">Sunday</option>
-            </select>
+            <div class="calendar-item">
+              <label for="modal-time-of-event">Time of Event</label>
+              <select name="time-of-event" id="time">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+              </select>
+            </div>
           </div>
           <div class="column-full">
-            <label for="modal-day-of-week">Day of Week</label>
-            <select name="day-of-week" id="day">
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="Wednesday">Wednesday</option>
-              <option value="Thursday">Thursday</option>
-              <option value="Friday">Friday</option>
-              <option value="Saturday">Saturday</option>
-              <option value="Sunday">Sunday</option>
-            </select>
+            <div class="calendar-item">
+              <label for="modal-day-of-week">Day of Week</label>
+              <select name="day-of-week" id="day">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+              </select>
+            </div>
           </div>
           <div class="column-full">
-            <label for="modal-event-information">Event Information</label>
-            <textarea name="event-informaton" id="information"></textarea>
+            <div class="calendar-item">
+              <label for="modal-event-information">Event Information</label>
+              <textarea name="event-informaton" id="information"></textarea>
+            </div>
           </div>
           <div class="column-full">
-            <div class="modal-actions hbar">
-              <button type="button" id="cancel-button">Cancel</button>
-              <button id="confirm-button">Confirm</button>
+            <div class="calendar-item">
+              <div class="modal-actions hbar">
+                <button type="button" id="cancel-button">Cancel</button>
+                <button id="confirm-button">Confirm</button>
+              </div>
             </div>
           </div>
         </div>

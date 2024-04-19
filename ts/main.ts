@@ -26,7 +26,9 @@ const $formInputs = document.querySelector('form') as HTMLFormElement;
 const $tbody = document.querySelector('tbody') as HTMLTableSectionElement;
 const $formTime = document.querySelector('#time') as HTMLSelectElement;
 const $formDay = document.querySelector('#day') as HTMLSelectElement;
-const $formInformation = document.querySelector('#information') as HTMLTextAreaElement;
+const $formInformation = document.querySelector(
+  '#information',
+) as HTMLTextAreaElement;
 
 const domQueries: Record<string, any> = {
   $addNewEventButton,
@@ -38,7 +40,7 @@ const domQueries: Record<string, any> = {
   $select,
   $formTime,
   $formDay,
-  $formInformation
+  $formInformation,
 };
 
 console.dir($tbody);
@@ -82,6 +84,7 @@ function renderEntry(entry: Entry): HTMLTableRowElement {
   const $tdTime = document.createElement('td') as HTMLTableCellElement;
   const $tdInformation = document.createElement('td') as HTMLTableCellElement;
   const $tdActions = document.createElement('td') as HTMLTableCellElement;
+  $tdActions.classList.add('hbar');
   const $editButton = document.createElement('button') as HTMLButtonElement;
   const $deleteButton = document.createElement('button') as HTMLButtonElement;
 
@@ -127,6 +130,5 @@ $tbody.addEventListener('click', (event: Event) => {
 
   if (eventTarget.innerHTML === 'Edit') {
     $dialog.showModal();
-
   }
-})
+});

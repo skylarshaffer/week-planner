@@ -10,6 +10,29 @@ img {
   width: 100%;
 }
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2 {
+  font-family: 'Proza Libre', sans-serif;
+}
+
+button {
+  display: flex;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 0.25rem;
+  height: 2rem;
+  min-width: 4.5rem;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .column-full {
   display: flex;
   flex-direction: column;
@@ -26,30 +49,39 @@ dialog::backdrop {
   background-color: rgb(0, 0, 0, 0.8);
 }
 
-tbody[data-selected="Monday"] tr[data-day="Monday"] {
+.hbar {
+  display: flex;
+  align-items: center;
+}
+
+.calendar-item {
+  margin-bottom: 2rem;
+}
+
+tbody[data-selected='Monday'] tr[data-day='Monday'] {
   display: table-row !important;
 }
 
-tbody[data-selected="Tuesday"] tr[data-day="Tuesday"] {
+tbody[data-selected='Tuesday'] tr[data-day='Tuesday'] {
   display: table-row !important;
 }
 
-tbody[data-selected="Wednesday"] tr[data-day="Wednesday"] {
+tbody[data-selected='Wednesday'] tr[data-day='Wednesday'] {
   display: table-row !important;
 }
 
-tbody[data-selected="Thursday"] tr[data-day="Thursday"] {
+tbody[data-selected='Thursday'] tr[data-day='Thursday'] {
   display: table-row !important;
 }
 
-tbody[data-selected="Friday"] tr[data-day="Friday"] {
+tbody[data-selected='Friday'] tr[data-day='Friday'] {
   display: table-row !important;
 }
 
-tbody[data-selected="Saturday"] tr[data-day="Saturday"] {
+tbody[data-selected='Saturday'] tr[data-day='Saturday'] {
   display: table-row !important;
 }
 
-tbody[data-selected="Sunday"] tr[data-day="Sunday"] {
+tbody[data-selected='Sunday'] tr[data-day='Sunday'] {
   display: table-row !important;
 }
