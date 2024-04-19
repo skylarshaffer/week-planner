@@ -6,6 +6,9 @@ const $confirmButton = document.querySelector('#confirm-button');
 const $select = document.querySelector('select');
 const $formInputs = document.querySelector('form');
 const $tbody = document.querySelector('tbody');
+const $formTime = document.querySelector('#time');
+const $formDay = document.querySelector('#day');
+const $formInformation = document.querySelector('#information');
 const domQueries = {
     $addNewEventButton,
     $dialog,
@@ -14,6 +17,9 @@ const domQueries = {
     $formInputs,
     $tbody,
     $select,
+    $formTime,
+    $formDay,
+    $formInformation
 };
 console.dir($tbody);
 for (const key in domQueries) {
@@ -74,4 +80,15 @@ $select.addEventListener('change', (event) => {
     const eventTarget = event.target;
     data.view = eventTarget.value;
     $tbody.dataset.selected = eventTarget.value;
+});
+$tbody.addEventListener('click', (event) => {
+    const eventTarget = event.target;
+    const selectedTr = eventTarget.closest('tr');
+    event.preventDefault();
+    if (eventTarget.innerHTML === 'Delete') {
+        selectedTr.remove();
+    }
+    if (eventTarget.innerHTML === 'Edit') {
+        $dialog.showModal();
+    }
 });

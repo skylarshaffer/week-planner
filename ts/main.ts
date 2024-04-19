@@ -22,10 +22,11 @@ const $confirmButton = document.querySelector(
   '#confirm-button',
 ) as HTMLButtonElement;
 const $select = document.querySelector('select') as HTMLSelectElement;
-
 const $formInputs = document.querySelector('form') as HTMLFormElement;
-
 const $tbody = document.querySelector('tbody') as HTMLTableSectionElement;
+const $formTime = document.querySelector('#time') as HTMLSelectElement;
+const $formDay = document.querySelector('#day') as HTMLSelectElement;
+const $formInformation = document.querySelector('#information') as HTMLTextAreaElement;
 
 const domQueries: Record<string, any> = {
   $addNewEventButton,
@@ -35,6 +36,9 @@ const domQueries: Record<string, any> = {
   $formInputs,
   $tbody,
   $select,
+  $formTime,
+  $formDay,
+  $formInformation
 };
 
 console.dir($tbody);
@@ -111,3 +115,18 @@ $select.addEventListener('change', (event: Event) => {
   data.view = eventTarget.value;
   $tbody.dataset.selected = eventTarget.value;
 });
+
+$tbody.addEventListener('click', (event: Event) => {
+  const eventTarget = event.target as HTMLButtonElement;
+  const selectedTr = eventTarget.closest('tr') as HTMLTableRowElement;
+
+  event.preventDefault();
+  if (eventTarget.innerHTML === 'Delete') {
+    selectedTr.remove();
+  }
+
+  if (eventTarget.innerHTML === 'Edit') {
+    $dialog.showModal();
+
+  }
+})
