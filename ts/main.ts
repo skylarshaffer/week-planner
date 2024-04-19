@@ -49,11 +49,12 @@ $cancelButton.addEventListener('click', () => {
   $dialog.close();
 });
 
-$confirmButton.addEventListener('click', () => {
+$formInputs.addEventListener('submit', (event: Event) => {
+  event.preventDefault();
   const $formElements = $formInputs.elements as FormElements;
   const formSubmission: Entry = {
-    time: $formElements.time.selectedIndex,
-    day: $formElements.day.selectedIndex,
+    time: $formElements.time.value,
+    day: $formElements.day.value,
     information: $formElements.information.value,
   };
 

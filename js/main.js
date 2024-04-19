@@ -24,7 +24,8 @@ $addNewEventButton.addEventListener('click', () => {
 $cancelButton.addEventListener('click', () => {
   $dialog.close();
 });
-$confirmButton.addEventListener('click', () => {
+$formInputs.addEventListener('submit', (event) => {
+  event.preventDefault();
   const $formElements = $formInputs.elements;
   const formSubmission = {
     time: $formElements.time.value,

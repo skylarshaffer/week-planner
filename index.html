@@ -108,46 +108,45 @@
     </main>
     <dialog>
       <form>
-      <div class="row">
-        <div class="column-full">
-          <label for="modal-time-of-event">Time of Event</label>
-          <select name="time-of-event" id="modal-time-of-event">
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-          </select>
-        </div>
-        <div class="column-full">
-          <label for="modal-day-of-week">Day of Week</label>
-          <select name="day-of-week" id="modal-day-of-week">
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-          </select>
-        </div>
-        <div class="column-full">
-          <label for="modal-event-information">Event Information</label>
-          <textarea
-            name="event-informaton"
-            id="modal-event-information"></textarea>
-        </div>
-        <div class="column-full">
-          <div class="modal-actions hbar">
-            <button type="button" id="cancel-button">Cancel</button>
-            <button type="button" id="confirm-button">Confirm</button>
+        <div class="row">
+          <div class="column-full">
+            <label for="modal-time-of-event">Time of Event</label>
+            <select name="time-of-event" id="time">
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+          </div>
+          <div class="column-full">
+            <label for="modal-day-of-week">Day of Week</label>
+            <select name="day-of-week" id="day">
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+          </div>
+          <div class="column-full">
+            <label for="modal-event-information">Event Information</label>
+            <textarea name="event-informaton" id="information"></textarea>
+          </div>
+          <div class="column-full">
+            <div class="modal-actions hbar">
+              <button type="button" id="cancel-button">Cancel</button>
+              <button id="confirm-button">Confirm</button>
+            </div>
           </div>
         </div>
-      </div>
       </form>
     </dialog>
+    <script src="js/data.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
