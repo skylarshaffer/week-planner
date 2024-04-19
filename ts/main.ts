@@ -69,11 +69,12 @@ $formInputs.addEventListener('submit', (event: Event) => {
   };
   $tbody.prepend(renderEntry(formSubmission));
 if(!data.editing){
-
-}
   data.entries.unshift(formSubmission);
+  data.nextEntryId++;
+}
 if (data.editing){
-  $tbody.replaceChild(renderEntry(formSubmission),);
+  const $selectedTr = document.querySelector(`tr[data-entry-id="${data.editing.entryId}"]`) as HTMLTableRowElement
+  $tbody.replaceChild(renderEntry(formSubmission), $selectedTr);
 }
   data.editing = null;
   $dialog.close();
@@ -83,7 +84,13 @@ function renderEntry(entry: Entry): HTMLTableRowElement {
   const $tr = document.createElement('tr');
   $tr.classList.add('hidden');
   $tr.classList.add('entry');
+  if (data.editing) {
+  $tr.dataset.entryId = data.editing.entryId.toString();
+  }
+
+   if (!data.editing) {
   $tr.dataset.entryId = data.nextEntryId.toString();
+  }
   $tr.dataset.day = entry.day;
 
   const $tdTime = document.createElement('td') as HTMLTableCellElement;

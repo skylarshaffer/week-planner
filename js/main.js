@@ -44,10 +44,12 @@ $formInputs.addEventListener('submit', (event) => {
     };
     $tbody.prepend(renderEntry(formSubmission));
     if (!data.editing) {
+        data.entries.unshift(formSubmission);
+        data.nextEntryId++;
     }
-    data.entries.unshift(formSubmission);
     if (data.editing) {
-        $tbody.replaceChild(renderEntry(formSubmission));
+        const $selectedTr = document.querySelector(`tr[data-entry-id="${data.editing.entryId}"]`);
+        $tbody.replaceChild(renderEntry(formSubmission), $selectedTr);
     }
     data.editing = null;
     $dialog.close();
@@ -56,7 +58,12 @@ function renderEntry(entry) {
     const $tr = document.createElement('tr');
     $tr.classList.add('hidden');
     $tr.classList.add('entry');
-    $tr.dataset.entryId = data.nextEntryId.toString();
+    if (data.editing) {
+        $tr.dataset.entryId = data.editing.entryId.toString();
+    }
+    if (!data.editing) {
+        $tr.dataset.entryId = data.nextEntryId.toString();
+    }
     $tr.dataset.day = entry.day;
     const $tdTime = document.createElement('td');
     const $tdInformation = document.createElement('td');
