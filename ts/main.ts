@@ -10,7 +10,6 @@ interface Entry {
   information: string;
 }
 
-
 const $addNewEventButton = document.querySelector(
   '#add-new-event-button',
 ) as HTMLButtonElement;
@@ -53,8 +52,8 @@ $cancelButton.addEventListener('click', () => {
 $confirmButton.addEventListener('click', () => {
   const $formElements = $formInputs.elements as FormElements;
   const formSubmission: Entry = {
-    time: $formElements.time.selectedOptions,
-    day: $formElements.day.selectedOptions,
+    time: $formElements.time.selectedIndex,
+    day: $formElements.day.selectedIndex,
     information: $formElements.information.value,
   };
 
