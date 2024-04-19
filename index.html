@@ -35,114 +35,117 @@
             <option value="Sunday">Sunday</option>
           </select>
         </div>
-      </div>
-      <div class="row">
-        <button type= button id="add-new-event-button">Add New Event</button>
-      </div>
-      <div class="row">
-        <table>
-          <thead>
-            <tr>
-              <th>Time</th>
-              <th>Event</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="row">
-        <p>2024 Weekly Planner Inc</p>
+        <div class="column-full">
+          <button type="button" id="add-new-event-button">Add New Event</button>
+        </div>
+        <div class="column-full">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Event</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="column-full">
+          <p>2024 Weekly Planner Inc</p>
+        </div>
       </div>
     </main>
     <dialog>
       <div class="row">
-        <label for="modal-time-of-event"></label>
-        <select name="time-of-event" id="modal-time-of-event">
-          <option value="" disabled selected>Choose a day</option>
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-          <option value="Saturday">Saturday</option>
-          <option value="Sunday">Sunday</option>
-        </select>
-        <label for="modal-day-of-week"></label>
-        <select name="day-of-week" id="modal-day-of-week">
-          <option value="" disabled selected>Choose a day</option>
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-          <option value="Saturday">Saturday</option>
-          <option value="Sunday">Sunday</option>
-        </select>
-        <label for="modal-event-information"></label>
-        <textarea
-          name="event-informaton"
-          id="modal-event-information"></textarea>
-      </div>
-      <div class="row">
-        <div class="modal-actions hbar">
-          <button type="button" id="cancel-button">Cancel</button>
-          <button type="button" id="confirm-button">Confirm</button>
+        <div class="column-full">
+          <label for="modal-time-of-event">Time of Event</label>
+          <select name="time-of-event" id="modal-time-of-event">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+        <div class="column-full">
+          <label for="modal-day-of-week">Day of Week</label>
+          <select name="day-of-week" id="modal-day-of-week">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+        <div class="column-full">
+          <label for="modal-event-information">Event Information</label>
+          <textarea
+            name="event-informaton"
+            id="modal-event-information"></textarea>
+        </div>
+        <div class="column-full">
+          <div class="modal-actions hbar">
+            <button type="button" id="cancel-button">Cancel</button>
+            <button type="button" id="confirm-button">Confirm</button>
+          </div>
         </div>
       </div>
     </dialog>
-    <script src="js/data.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
