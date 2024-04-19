@@ -68,9 +68,14 @@ $formInputs.addEventListener('submit', (event: Event) => {
     entryId: data.nextEntryId,
   };
   $tbody.prepend(renderEntry(formSubmission));
+if(!data.editing){
 
+}
   data.entries.unshift(formSubmission);
-
+if (data.editing){
+  $tbody.replaceChild(renderEntry(formSubmission),);
+}
+  data.editing = null;
   $dialog.close();
 });
 
@@ -88,12 +93,6 @@ function renderEntry(entry: Entry): HTMLTableRowElement {
   const $editButton = document.createElement('button') as HTMLButtonElement;
   const $deleteButton = document.createElement('button') as HTMLButtonElement;
 
-  // FOR SUBMIT LISTENER-------
-  // for(let i = 0; i < data.entries.length; i++){
-  // if(data.entries[i].entryId === formS )
-  //   data.entries[i].time = $tdTime.innerHTML
-  //   $tdDay.innerHTML
-  //   $tdInformation.innerHTML
 
   $tdTime.innerHTML = entry.time;
   $tdInformation.innerHTML = entry.information;
@@ -129,6 +128,19 @@ $tbody.addEventListener('click', (event: Event) => {
   }
 
   if (eventTarget.innerHTML === 'Edit') {
+
+    for(let i = 0; i < data.entries.length; i++){
+      if(data.entries[i].entryId.toString() === selectedTr.dataset.entryId){
+        data.editing = data.entries[i];
+        break
+      }
+    }
+
+    if (!data.editing) throw new Error("The data.entries failed");
+    $formDay.value = data.editing.day;
+    $formTime.value = data.editing.time;
+    $formInformation.value = data.editing.information;
+
     $dialog.showModal();
   }
 });
