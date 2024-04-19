@@ -8,6 +8,7 @@ interface Entry {
   time: string;
   day: string;
   information: string;
+  entryId:number;
 }
 
 const $addNewEventButton = document.querySelector(
@@ -56,9 +57,38 @@ $formInputs.addEventListener('submit', (event: Event) => {
     time: $formElements.time.value,
     day: $formElements.day.value,
     information: $formElements.information.value,
+    entryId: data.nextEntryId
   };
+ $tbody.prepend(renderEntry(formSubmission));
 
   data.entries.unshift(formSubmission);
 
+
   $dialog.close();
 });
+
+function renderEntry(entry:Entry):HTMLTableRowElement{
+  const $tr = document.createElement('tr');
+$tr.classList.add('entry')
+$tr.dataset.entryId = data.nextEntryId.toString()
+$tr.dataset.day = 'Monday';
+
+  const $tdTime = document.createElement('td') as HTMLTableCellElement;
+  const $tdInformation = document.createElement('td') as HTMLTableCellElement;
+  const $tdActions = document.createElement('td') as HTMLTableCellElement;
+  // FOR SUBMIT LISTENER-------
+  // for(let i = 0; i < data.entries.length; i++){
+  // if(data.entries[i].entryId === formS )
+  //   data.entries[i].time = $tdTime.innerHTML
+  //   $tdDay.innerHTML
+  //   $tdInformation.innerHTML
+
+  $tdTime.innerHTML = entry.time;
+  $tdInformation.innerHTML = entry.information;
+
+  $tr.appendChild($tdTime);
+  $tr.appendChild($tdInformation);
+
+  return $tr
+
+}
