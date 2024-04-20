@@ -51,6 +51,8 @@ for (const key in domQueries) {
 
 //  LISTENERS
 $addNewEventButton.addEventListener('click', (): void => {
+  $formInputs.reset();
+  data.editing = null;
   $dialog.showModal();
 });
 
@@ -67,15 +69,25 @@ $formInputs.addEventListener('submit', (event: Event) => {
     information: $formElements.information.value,
     entryId: data.nextEntryId,
   };
-  $tbody.prepend(renderEntry(formSubmission));
-if(!data.editing){
-  data.entries.unshift(formSubmission);
-  data.nextEntryId++;
-}
-if (data.editing){
-  const $selectedTr = document.querySelector(`tr[data-entry-id="${data.editing.entryId}"]`) as HTMLTableRowElement
-  $tbody.replaceChild(renderEntry(formSubmission), $selectedTr);
-}
+
+  if (!data.editing) {
+    $tbody.prepend(renderEntry(formSubmission));
+    data.entries.unshift(formSubmission);
+    data.nextEntryId++;
+  }
+  if (data.editing) {
+    formSubmission.entryId = data.editing.entryId;
+    const $selectedTr = document.querySelector(
+      `tr[data-entry-id="${data.editing.entryId}"]`,
+    ) as HTMLTableRowElement;
+    $tbody.replaceChild(renderEntry(formSubmission), $selectedTr);
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === data.editing.entryId) {
+        data.entries[i] = data.editing;
+        break;
+      }
+    }
+  }
   data.editing = null;
   $dialog.close();
 });
@@ -85,11 +97,11 @@ function renderEntry(entry: Entry): HTMLTableRowElement {
   $tr.classList.add('hidden');
   $tr.classList.add('entry');
   if (data.editing) {
-  $tr.dataset.entryId = data.editing.entryId.toString();
+    $tr.dataset.entryId = data.editing.entryId.toString();
   }
 
-   if (!data.editing) {
-  $tr.dataset.entryId = data.nextEntryId.toString();
+  if (!data.editing) {
+    $tr.dataset.entryId = data.nextEntryId.toString();
   }
   $tr.dataset.day = entry.day;
 
@@ -99,7 +111,6 @@ function renderEntry(entry: Entry): HTMLTableRowElement {
   $tdActions.classList.add('hbar');
   const $editButton = document.createElement('button') as HTMLButtonElement;
   const $deleteButton = document.createElement('button') as HTMLButtonElement;
-
 
   $tdTime.innerHTML = entry.time;
   $tdInformation.innerHTML = entry.information;
@@ -135,15 +146,14 @@ $tbody.addEventListener('click', (event: Event) => {
   }
 
   if (eventTarget.innerHTML === 'Edit') {
-
-    for(let i = 0; i < data.entries.length; i++){
-      if(data.entries[i].entryId.toString() === selectedTr.dataset.entryId){
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId.toString() === selectedTr.dataset.entryId) {
         data.editing = data.entries[i];
-        break
+        break;
       }
     }
 
-    if (!data.editing) throw new Error("The data.entries failed");
+    if (!data.editing) throw new Error('The data.entries failed');
     $formDay.value = data.editing.day;
     $formTime.value = data.editing.time;
     $formInformation.value = data.editing.information;
